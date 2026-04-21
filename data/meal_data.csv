@@ -1,0 +1,15 @@
+student_id,day,meal,food_item,rating,energy_level
+101,Mon,Lunch,Paneer,4,High
+102,Mon,Dinner,Dal Rice,3,Medium
+103,Tue,Lunch,Maggi,5,High
+104,Tue,Dinner,Roti Sabzi,2,Low
+105,Wed,Lunch,Chole Bhature,5,High
+106,Wed,Dinner,Khichdi,3,Medium
+107,Thu,Lunch,Fried Rice,4,High
+108,Thu,Dinner,Dal Roti,2,Low
+109,Fri,Lunch,Paneer,5,High
+110,Fri,Dinner,Rice Curry,3,Medium
+111,Sat,Lunch,Noodles,4,High
+112,Sat,Dinner,Roti Sabzi,2,Low
+113,Sun,Lunch,Biryani,5,High
+114,Sun,Dinner,Khichdi,3,Medium
