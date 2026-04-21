@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # Page config
 st.set_page_config(page_title="Mess Food Analytics", layout="wide")
 
-# 🔥 FULL UI FIX
+# FULL UI
 st.markdown("""
 <style>
 
@@ -63,9 +63,18 @@ st.markdown("<p style='text-align:center; color:#6D4C41;'>🤎 Cute insights int
 st.markdown("---")
 
 # Load data
-conn = sqlite3.connect("mess.db")
-df = pd.read_sql_query("SELECT * FROM meals", conn)
-conn.close()
+df = pd.read_csv("data/meal_data.csv")
+
+# recreate transformation (same as ETL)
+def categorize(rating):
+    if rating >= 4:
+        return "Good"
+    elif rating == 3:
+        return "Average"
+    else:
+        return "Poor"
+
+df['satisfaction'] = df['rating'].apply(categorize)
 
 # Sidebar
 st.sidebar.markdown("## 🎛️ Controls")
@@ -97,8 +106,6 @@ col2.markdown(f"<h3 style='text-align:center;'>⭐ Avg Rating</h3><h2 style='tex
 col3.markdown(f"<h3 style='text-align:center;'>🍛 Variety</h3><h2 style='text-align:center;'>{filtered_df['food_item'].nunique()}</h2>", unsafe_allow_html=True)
 
 st.markdown("---")
-
-# 🎨 CUSTOM BEIGE CHARTS (NO BLACK, NO BLUE)
 
 # Food Popularity
 col1, col2 = st.columns(2)
